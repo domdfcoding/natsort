@@ -155,7 +155,7 @@ class NumericalRegularExpressions:
     @classmethod
     def _construct_regex(cls, fmt: str) -> Pattern[str]:
         """Given a format string, construct the regex with class attributes."""
-        return re.compile(fmt.format(**vars(cls)), flags=re.U)
+        return re.compile(fmt.format_map(vars(cls)), flags=re.U)
 
     @classmethod
     def int_sign(cls) -> Pattern[str]:
